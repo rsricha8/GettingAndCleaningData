@@ -4,11 +4,11 @@ Getting and Cleaning Data Course Project
 This CodeBook is about a tidydata.txt attached herealong. This file is created from dataset which can be found [here](
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
-Reference: Readme.txt of the Raw Data
---------------------------------------
+###**About the raw data**
 
+The Readme.txt of the Raw Data explains the data as: 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. 
-Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) 
+Each person performed six activities (WALKING, WALKING_UPSTAIRS,WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) 
 wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 
 we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. 
 The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly 
@@ -19,20 +19,25 @@ in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window)
 which has gravitational and body motion components, was separated using a Butterworth low-pass filter into 
 body acceleration and gravity. The gravitational force is assumed to have only low frequency components,
 therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by
-calculating variables from the time and frequency domain. 
-
+calculating variables from the time and frequency domain.
 
 For each record it is provided:
-===============================
-
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 - Triaxial Angular velocity from the gyroscope. 
 - A 561-feature vector with time and frequency domain variables. 
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
-- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
+This dataset is converted into tidydata.txt which has merged data from training and test and extracts only the measurements on the mean and standard deviation for each measurement. Alongwith, with meaningful column names, it is more descriptive and gives an good coverage of information. 
 
-- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
+###**How the tidydata.txt is created**
 
-- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
+*Please refer run_analysis.R for step-by-step code instructions*
+
+-  Given dataset had training and test set in seperated files. Even among them, the activity listing was in a different file and the feature listing is in different. Firstly, all activities are added next to the features i.e x_train and y_train are merged giving complete training set. Same did with test set. Both resulting training and test data are then merged into one.
+-  From features.txt file, features pertaining to mean() and std() are extracted. From the data set, we filter in the features which matched to the extracted one.
+-  Meaningful column names are given the data.
+-  The activity column which has 6 level of activites listed as numeric are transformed to show the activity name instead.
+-  Consequent data is saved in tidydata.txt
+
+*Please refer run_analysis.R for step-by-step code instructions*
