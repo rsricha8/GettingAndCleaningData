@@ -6,6 +6,6 @@ This is the final output of processing and cleaning the data obtained from [Huma
 ###**run_analysis.R**
 This R file has the code for the project. Make sure the current directory is set the extracted project files and run run_analysis.txt. It will create tidydata.txt file. 
 
-###**CodeBook.MD**
+###**CodeBook.md**
 CodeBook.MD gives you the background and procedural information about the project.
 
