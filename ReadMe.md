@@ -34,7 +34,7 @@ This dataset is converted into tidydata.txt which has merged data from training 
 
 ###**Variables**
 
-The Tidy Data contains each record as a row. It has included mean and standard deviation for each of the following features as variables. ( Note: X Y Z represents the 3 dimensional axis and each dimension is used as a seperate variable ) . It also has the activity of experiment as its first column. Altogether tidy data has 67 variables and 10299 observations. 
+The Tidy Data contains each record as a row. It has included mean and standard deviation for each of the following features as variables. These features are he measurements accelerometer or gyroscope. The prefix **t** pertains to time and **f** pertains to frequency. ( Note: X Y Z represents the 3 dimensional axis and measurement in each dimension is used as a seperate variable). It also has the activity of experiment as its first column. Altogether tidy data has 67 variables and 10299 observations. 
 
 - tBodyAcc-XYZ
 - tGravityAcc-XYZ
